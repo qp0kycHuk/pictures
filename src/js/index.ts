@@ -9,6 +9,7 @@ import ripple from '@qpokychuk/ripple'
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade } from 'swiper'
 
 import '../scss/index.scss'
+import effects from './effects'
 
 Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade])
 Swiper.defaults.touchStartPreventDefault = false
@@ -31,6 +32,7 @@ function loadHandler() {
   theme.init()
   fancybox.init()
   phonemask.init('[type="tel"]')
+  effects.init()
 
   ripple.attach('.btn')
   ripple.attach('.waved')

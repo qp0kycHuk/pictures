@@ -16,7 +16,7 @@ body {
   display       : flex;
   flex-direction: column;
   min-height    : 100vh;
-  background    : var(--bg1);
+  background    : var(--bg3);
 
   * {
     font-family: var(--font-base);
@@ -28,16 +28,59 @@ body {
   .active-enabled:not(:is(:is(.toggle-active, .tab-active, .active) .active-enabled)) {
     display: none !important;
   }
-  
+
   .active-disabled:is(:is(.toggle-active, .tab-active, .active) .active-disabled) {
     display: none !important;
   }
-  
+
   .is-active-disabled:is(.toggle-active, .active) {
     display: none;
   }
-  
+
   .is-active-enabled:not(:is(.toggle-active, .active)) {
     display: none;
   }
+}
+
+
+.curtains-canvas {
+  position      : fixed;
+  top           : -10%;
+  right         : 0;
+  left          : 0;
+  height        : 120%;
+  z-index       : 10;
+  pointer-events: none;
+}
+
+
+.interior {
+  position: relative;
+
+  &-plane {
+    position  : absolute;
+    inset     : 0;
+    max-width : 250px;
+    max-height: 340px;
+
+    img {
+      display: none;
+    }
+  }
+
+  &-item {
+    display       : flex;
+    align-items   : center;
+    flex-direction: column;
+    padding       : 58px 42px;
+    background    : linear-gradient(180deg, #EEE 0%, rgba(238, 238, 238, 0.50) 100%);
+    break-inside  : avoid-column;
+
+    &-plane {
+      img {
+        opacity: 0;
+      }
+    }
+  }
+
 }
