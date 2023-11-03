@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 @layer base {
-    @import '@qpokychuk/ripple/index.css';
-    @import "@fancyapps/ui/dist/fancybox/fancybox.css";
-    @import 'swiper/css';
+  @import '@qpokychuk/ripple/index.css';
+  @import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
 }
 
 @import '@qpokychuk/fonts/inter/index.css';
+
+@font-face {
+  font-family: adonisc;
+  font-weight: normal;
+  font-style : normal;
+  src        : url("../fonts/AdonisC/AdonisC\ Regular.otf");
+}
+
 @import '../ui/ui-core';
 @import '../scss/frontend--style';

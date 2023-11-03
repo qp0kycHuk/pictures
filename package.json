@@ -61,7 +61,7 @@
     "lighten-darken-color": "^1.0.0",
     "npm-kit-tab": "^1.0.0",
     "npm-kit-toggle": "^1.1.0",
-    "swiper": "^8.2.4",
+    "swiper": "^11.0.3",
     "vue": "^3.3.4",
     "vue-loader": "^17.1.1"
   }

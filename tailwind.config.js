@@ -20,14 +20,14 @@ module.exports = {
       sm: 580 + 29.98 + 'px',
       md: 720 + 29.98 + 'px',
       lg: 1170 + 29.98 + 'px',
-      xl: 1270 + 29.98 + 'px',
+      xl: 1366 + 29.98 + 'px',
     },
     container: {
       xs: 420 + 'px',
       sm: 580 + 'px',
       md: 720 + 'px',
-      lg: 1170 + 'px',
-      xl: 1366 + 'px',
+      lg: 920 + 'px',
+      xl: 1170 + 'px',
     },
     colors: {
       primary: '#b71540',
@@ -59,6 +59,10 @@ module.exports = {
         '2.5xl': ['1.75rem', '1.35'],
         '3.5xl': ['2rem', '1.35'],
         '4.5xl': ['2.5rem', '1.35'],
+      },
+      spacing: {
+        15: '3.75rem',
+        18: '4.5rem',
       },
     },
   },
