@@ -18,7 +18,7 @@ const htmlWebpackPluginDefaults = {
 module.exports = {
   entry: {
     index: './src/js/index.ts',
-    // app: './src/js/app.ts',
+    components: './src/js/components/index.ts',
   },
   resolve: {
     alias: {
@@ -50,43 +50,24 @@ module.exports = {
       },
       { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
       { test: /\.s[ac]ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] },
+
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(ts|tsx)$/,
+        exclude: /(node_modules|bower_components|components)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: ['@babel/preset-env', '@babel/preset-typescript'],
+            plugins: ['transform-custom-element-classes']
           },
         },
       },
       {
         test: /\.(ts|tsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react', '@babel/preset-typescript'],
-          },
-        },
+        include: /components/,
+        use: 'ts-loader',
       },
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader',
-        options: {
-          appendTsSuffixTo: [/\.vue$/],
-        },
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            ts: 'ts-loader',
-          },
-          esModule: true,
-        },
-      },
+
       {
         test: /\.html$/,
         include: path.resolve(__dirname, 'src/html-includes'),
@@ -95,11 +76,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new VueLoaderPlugin(),
-    new webpack.DefinePlugin({
-      __VUE_OPTIONS_API__: true,
-      __VUE_PROD_DEVTOOLS__: false,
-    }),
+
     new Dotenv(),
     new MiniCssExtractPlugin({ filename: 'css/style.css' }),
     ...generateHtmlPlugins('./src'),

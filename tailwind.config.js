@@ -12,7 +12,7 @@ const headingStyles = {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{html,js,vue}'],
+  content: ['./src/**/*.{html,js,ts,vue}'],
   darkMode: ['class', '[data-theme="dark"]'],
   theme: {
     screens: {
@@ -36,9 +36,11 @@ module.exports = {
       red: '#c0392b',
       green: '#27ae60',
       yellow: '#f39c12',
+      orange: '#FF5E33',
       gray: '#333',
       white: '#fff',
       black: '#000',
+      light: '#eee'
     },
     fontFamily: {
       base: 'var(--font-base)',

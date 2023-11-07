@@ -1,11 +1,13 @@
 import { Fancybox } from '@fancyapps/ui'
+import { OptionsType } from '@fancyapps/ui/types/Fancybox/options'
 
 function init() {
   window.Fancybox = Fancybox
-  const options = {
+  const options: Omit<Partial<OptionsType>, 'defaultType'> & { defaultType: string } = {
     dragToClose: false,
     mainClass: 'fancybox-custom-modal',
     defaultType: 'ajax',
+    autoFocus: false,
   }
 
   Fancybox.bind('[data-fancybox]')

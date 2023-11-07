@@ -32,6 +32,9 @@ function loadHandler() {
   ripple.deAttach('.btn-text')
   window.addEventListener('toggleopen', toggleopenHaandler)
   window.addEventListener('toggleclose', togglecloseHaandler)
+
+  window.addEventListener('scroll', scrollHandler)
+  scrollHandler()
 }
 
 function toggleopenHaandler(event: any) {
@@ -45,3 +48,26 @@ function togglecloseHaandler(event: any) {
     document.body.classList.remove('menu-opened')
   }
 }
+
+function scrollHandler() {
+  document.body.classList.toggle('scroll-top', window.scrollY < 10)
+}
+
+// Жестко подумать надо
+function checkGrid($grid: HTMLElement | null) {
+  if (!$grid) {
+    return
+  }
+
+  const $items = $grid.querySelectorAll('.catalog-item')
+
+  const orderedItems = []
+  const gridItems = []
+
+  $items.forEach(($item, index) => {
+    $item.setAttribute('data-order', index.toString())
+    orderedItems.push($item)
+  })
+}
+
+checkGrid(document.querySelector('.catalog-grid'))

@@ -1,0 +1,41 @@
+<div class="dialog-product">
+  <div class="product-detail">
+    <div class="product-detail-image">
+      <swiper-container class="product-detail-thumbs" direction="vertical" slides-per-view="auto" space-between="8">
+        <swiper-slide class="h-auto product-detail-thumb">
+          <img src="img/catalog/atlantide.png" alt="">
+        </swiper-slide>
+        <swiper-slide class="h-auto product-detail-thumb">
+          <img src="img/catalog/atlantide.png" alt="">
+        </swiper-slide>
+      </swiper-container>
+      <swiper-container class="product-detail-slider" thumbs-swiper=".product-detail-thumbs" pagination="true" pagination-el=".product-detail-pagination" space-between="20">
+        <swiper-slide class="product-detail-slide">
+          <img src="img/catalog/atlantide.png" alt="" class="w-full">
+        </swiper-slide>
+        <swiper-slide class="product-detail-slide">
+          <img src="img/catalog/atlantide.png" alt="" class="w-full">
+        </swiper-slide>
+
+        <div class="product-detail-pagination slider-pagination mx-auto mt-4 flex justify-center lg:hidden" slot="container-end"></div>
+      </swiper-container>
+    </div>
+    <div class="product-detail-content">
+      <div class="max-sm:text-sm">Цветы Атлантиды</div>
+      <div class="sm:mt-6 title">4000 руб</div>
+      <div class="mt-8 lg:mt-12 max-sm:text-sm">
+        <div class="opacity-60">Размеры</div>
+        <div class="mt-3">100 х 200 см</div>
+      </div>
+      <div class="mt-5 sm:mt-8 max-sm:text-sm">
+        <div class="opacity-60">Рамка</div>
+        <div class="mt-3">Черная</div>
+      </div>
+
+      <div class="flex mt-8 sm:mt-20 gap-4">
+        <c-counter max="100" min="1"></c-counter>
+        <button class="btn btn-fill btn-black">Купить</button>
+      </div>
+    </div>
+  </div>
+</div>
