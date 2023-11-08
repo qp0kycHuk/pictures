@@ -1,0 +1,11 @@
+<%= _.template(require('./html-includes/header.html').default)() %>
+
+<section class="not-found">
+  <div class="not-found-title text-center">404</div>
+  <div class="mt-8 sm:mt-16 text-center max-sm:text-sm">
+    Возможно, запрашиваемая вами страница была перенесена или удалена
+  </div>
+  <a href="/" class="btn btn-black btn-fill mx-auto mt-8 sm:mt-16">На главную</a>
+</section>
+
+<%= _.template(require('./html-includes/footer.html').default)() %>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web developer</title>
+</head>
+
+<body id="body">
+
+  <header class="header">
+    <button class="btn-icon btn-sm btn lg:hidden" data-toggle-link="menu">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#menu" />
+      </svg>
+    </button>
+    <div class="header-nav max-lg:hidden">
+      <a href="#" class="btn btn-text underline-offset-4 hover:underline">Магазин</a>
+      <a href="#" class="btn btn-text underline-offset-4 hover:underline">Как заказать</a>
+      <a href="#" class="btn btn-text underline-offset-4 hover:underline">О нас</a>
+    </div>
+    <div class="header-logo cursor-pointer" data-scroll="#body">
+      <img src="img/logo.svg" alt="" class=" m-auto">
+    </div>
+    <div class="header-contacts">
+      <a href="tel:8 918 020 00 00" class="btn btn-text font-semibold mx-auto max-md:hidden underline-offset-4 hover:underline">8 918 020 00 00</a>
+      <div class="flex gap-2 max-md:ml-auto">
+        <a href="" target="_blank" class="btn btn-text">
+          <img src="img/telegramm.svg" alt="">
+        </a>
+        <a href="" target="_blank" class="btn btn-text">
+          <img src="img/pinterest.svg" alt="">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu" id="menu">
+    <div class="flex items-center">
+      <div class="header-logo">
+        <img src="img/logo.svg" alt="" class="max-lg:h-14">
+      </div>
+      <button class="btn-icon btn lg:hidden ml-auto" data-toggle-link="menu">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#cross" />
+        </svg>
+      </button>
+    </div>
+    <div class="mt-7 space-y-8">
+      <a href="#" class="btn btn-text justify-start text-left">Магазин</a>
+      <a href="#" class="btn btn-text justify-start text-left">Как заказать</a>
+      <a href="#" class="btn btn-text justify-start text-left">О нас</a>
+    </div>
+    <div class="mt-12">
+      <a href="tel:8 918 020 00 00" class="btn btn-text font-semibold justify-start text-left">8 918 020 00 00</a>
+    </div>
+    <div class="mt-16">
+      <div class="opacity-40">Интерьерные картины для вашего дома</div>
+
+      <div class="flex gap-2 mt-8">
+        <a href="" target="_blank" class="btn btn-text">
+          <img src="img/telegramm.svg" alt="">
+        </a>
+        <a href="" target="_blank" class="btn btn-text">
+          <img src="img/pinterest.svg" alt="">
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <div class="menu-shadow"></div>

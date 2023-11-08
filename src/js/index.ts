@@ -35,6 +35,9 @@ function loadHandler() {
 
   window.addEventListener('scroll', scrollHandler)
   scrollHandler()
+
+  checkGrid(document.querySelector('.catalog-grid'))
+  checkGrid(document.querySelector('.catalog-grid'))
 }
 
 function toggleopenHaandler(event: any) {
@@ -54,20 +57,42 @@ function scrollHandler() {
 }
 
 // Жестко подумать надо
-function checkGrid($grid: HTMLElement | null) {
+function checkGrid($grid: HTMLElement | null, clear = false) {
   if (!$grid) {
     return
   }
 
-  const $items = $grid.querySelectorAll('.catalog-item')
+  const $items = Array.from($grid.querySelectorAll('.catalog-item'))
 
-  const orderedItems = []
-  const gridItems = []
+  const gridItems: Element[][] = []
+  const columnCount = +getComputedStyle($grid).columnCount
 
   $items.forEach(($item, index) => {
-    $item.setAttribute('data-order', index.toString())
-    orderedItems.push($item)
+    let colIndex
+    const order = $item.getAttribute('data-order')
+
+    if (order && !clear) {
+      colIndex = +order
+    } else {
+      colIndex = index % columnCount
+      $item.setAttribute('data-order', colIndex.toString())
+    }
+
+    if (!gridItems[colIndex]) {
+      gridItems[colIndex] = []
+    }
+
+    gridItems[colIndex].push($item)
+  })
+
+  $grid.innerHTML = ''
+  gridItems.forEach((items) => {
+    const col = document.createElement('div')
+
+    items.forEach((item) => {
+      col.appendChild(item)
+    })
+
+    $grid.appendChild(col)
   })
 }
-
-checkGrid(document.querySelector('.catalog-grid'))

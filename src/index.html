@@ -1,129 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<%= _.template(require('./html-includes/header.html').default)() %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web developer</title>
-</head>
-
-<body id="body">
-
-  <header class="header">
-    <button class="btn-icon btn-sm btn lg:hidden" data-toggle-link="menu">
-      <svg class="icon">
-        <use xlink:href="img/icons.svg#menu" />
-      </svg>
-    </button>
-    <div class="header-nav max-lg:hidden">
-      <a href="#" class="btn btn-text underline-offset-4 hover:underline">Магазин</a>
-      <a href="#" class="btn btn-text underline-offset-4 hover:underline">Как заказать</a>
-      <a href="#" class="btn btn-text underline-offset-4 hover:underline">О нас</a>
-    </div>
-    <div class="header-logo cursor-pointer" data-scroll="#body">
-      <img src="img/logo.svg" alt="" class=" m-auto">
-    </div>
-    <div class="header-contacts">
-      <a href="tel:8 918 020 00 00" class="btn btn-text font-semibold mx-auto max-md:hidden underline-offset-4 hover:underline">8 918 020 00 00</a>
-      <div class="flex gap-2 max-md:ml-auto">
-        <a href="" target="_blank" class="btn btn-text">
-          <img src="img/telegramm.svg" alt="">
-        </a>
-        <a href="" target="_blank" class="btn btn-text">
-          <img src="img/pinterest.svg" alt="">
-        </a>
+<section class="started">
+  <div class="swiper started-content-slider w-full">
+    <div class="swiper-wrapper h-auto">
+      <% for(let i = 0; i < 12; i++) { %>
+      <div class="started-content swiper-slide">
+        <div class="text-center opacity-60">Картины для интерьера</div>
+        <div class="text-center title  mt-6 lg:mt-15">
+          Картины в технике <br>
+          текстурной живописи
+        </div>
+        <button class="btn btn-fill btn-black mx-auto mt-8 lg:mt-20">Смотреть всё</button>
       </div>
+      <% } %>
     </div>
-  </header>
 
-  <div class="menu" id="menu">
-    <div class="flex items-center">
-      <div class="header-logo">
-        <img src="img/logo.svg" alt="" class="max-lg:h-14">
+    <div class="slider-pagination mx-auto max-lg:mb-7 lg:mt-32"></div>
+  </div>
+  <div class="started-image-slider swiper w-full lg:p-8 ">
+    <div class="swiper-wrapper h-auto">
+      <% for(let i = 0; i < 12; i++) { %>
+      <div class="started-image swiper-slide">
+        <img src="img/started/1.png" alt="">
       </div>
-      <button class="btn-icon btn lg:hidden ml-auto" data-toggle-link="menu">
-        <svg class="icon">
-          <use xlink:href="img/icons.svg#cross" />
-        </svg>
-      </button>
-    </div>
-    <div class="mt-7 space-y-8">
-      <a href="#" class="btn btn-text justify-start text-left">Магазин</a>
-      <a href="#" class="btn btn-text justify-start text-left">Как заказать</a>
-      <a href="#" class="btn btn-text justify-start text-left">О нас</a>
-    </div>
-    <div class="mt-12">
-      <a href="tel:8 918 020 00 00" class="btn btn-text font-semibold justify-start text-left">8 918 020 00 00</a>
-    </div>
-    <div class="mt-16">
-      <div class="opacity-40">Интерьерные картины для вашего дома</div>
-
-      <div class="flex gap-2 mt-8">
-        <a href="" target="_blank" class="btn btn-text">
-          <img src="img/telegramm.svg" alt="">
-        </a>
-        <a href="" target="_blank" class="btn btn-text">
-          <img src="img/pinterest.svg" alt="">
-        </a>
-      </div>
-
+      <% } %>
     </div>
   </div>
-  <div class="menu-shadow"></div>
 
-  <section class="started">
-    <div class="swiper started-content-slider w-full">
-      <div class="swiper-wrapper h-auto">
-        <% for(let i = 0; i < 12; i++) { %>
-        <div class="started-content swiper-slide">
-          <div class="text-center opacity-60">Картины для интерьера</div>
-          <div class="text-center title  mt-6 lg:mt-15">
-            Картины в технике <br>
-            текстурной живописи
-          </div>
-          <button class="btn btn-fill btn-black mx-auto mt-8 lg:mt-20">Смотреть всё</button>
-        </div>
-        <% } %>
-      </div>
+</section>
 
-      <div class="slider-pagination mx-auto max-lg:mb-7 lg:mt-32"></div>
+<section class="pray">
+  <div class="title mb-16 text-center">Картины на заказ</div>
+  <div class="grid lg:grid-cols-2">
+    <div>
+      <img src="img/pray-img.png" alt="" class="block ml-auto max-lg:mr-auto">
     </div>
-    <div class="started-image-slider swiper w-full lg:p-8 ">
-      <div class="swiper-wrapper h-auto">
-        <% for(let i = 0; i < 12; i++) { %>
-        <div class="started-image swiper-slide">
-          <img src="img/started/1.png" alt="">
-        </div>
-        <% } %>
+    <div class="pray-content">
+      <img src="img/pray-flag.png" alt="" class="mx-auto mb-5 sm:mb-11">
+      <div class="text-center title">
+        Нарисуем <br>
+        именно для вас
       </div>
+      <div class="text-center mt-6 sm:mt-9 max-sm:text-sm">
+        Можем нарисовать картину по вашей идее <br>
+        <span class="text-orange">и под любой размер</span>
+      </div>
+      <button class="btn btn-black btn-whitebg mt-6 sm:mt-15 mx-auto">Заказать картину</button>
     </div>
+  </div>
+</section>
 
-  </section>
-
-  <section class="pray">
-    <div class="title mb-16 text-center">Картины на заказ</div>
-    <div class="grid lg:grid-cols-2">
-      <div>
-        <img src="img/pray-img.png" alt="" class="block ml-auto max-lg:mr-auto">
-      </div>
-      <div class="pray-content">
-        <img src="img/pray-flag.png" alt="" class="mx-auto mb-5 sm:mb-11">
-        <div class="text-center title">
-          Нарисуем <br>
-          именно для вас
-        </div>
-        <div class="text-center mt-6 sm:mt-9 max-sm:text-sm">
-          Можем нарисовать картину по вашей идее <br>
-          <span class="text-orange">и под любой размер</span>
-        </div>
-        <button class="btn btn-black btn-whitebg mt-6 sm:mt-15 mx-auto">Заказать картину</button>
-      </div>
-    </div>
-  </section>
-
-  <section class="catalog">
-    <!-- <div class="catalog-plane">
+<section class="catalog">
+  <!-- <div class="catalog-plane">
         <img src="img/catalog/atlantide.png" alt="" crossorigin="" data-sampler="texture1" id="texture1">
         <img src="img/catalog/flowers.png" alt="" crossorigin="" data-sampler="texture2" id="texture2">
         <img src="img/catalog/sea.png" alt="" crossorigin="" data-sampler="texture3" id="texture3">
@@ -132,182 +60,160 @@
         <img src="img/catalog/sea.png" alt="" crossorigin="" data-sampler="texture6" id="texture6">
       </div> -->
 
-    <div class="title text-center mb-7 sm:mb-18">
-      Стильный интерьер
-    </div>
+  <div class="title text-center mb-7 sm:mb-18">
+    Стильный интерьер
+  </div>
 
-    <div class="mb-10"></div>
+  <div class="mb-10"></div>
 
-    <div class="columns-2 lg:columns-3 gap-4 md:gap-5 lg:gap-16 catalog-grid">
-      <div class="catalog-item mb-4 md:mb-5 lg:mb-16 cursor-pointer" data-fancybox-modal data-src="dialog-product.html">
-        <div class="catalog-item-plane">
-          <img src="img/catalog/atlantide.png" alt="" crossorigin="" data-sampler="planeTexture">
-        </div>
-        <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды</div>
-        <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
-        <div class="catalog-item-hover ">
-          <img src="img/catalog/atlantide-hover.png" alt="">
-          <div class="catalog-item-hover-gradient"></div>
-          <button class="catalog-item-hover-btn btn btn-white btn-contur relative">Подробнее</button>
-        </div>
+  <div class="columns-2 lg:columns-3 gap-4 md:gap-5 lg:gap-16 catalog-grid">
+    <div class="catalog-item mb-4 md:mb-5 lg:mb-16 cursor-pointer" data-fancybox-modal data-src="dialog-product.html">
+      <div class="catalog-item-plane">
+        <img src="img/catalog/atlantide.png" alt="" crossorigin="" data-sampler="planeTexture">
       </div>
-      <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
-        <div class="catalog-item-plane">
-          <img src="img/catalog/flowers.png" alt="" crossorigin="" data-sampler="planeTexture">
-        </div>
-        <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды</div>
-        <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
-      </div>
-      <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
-        <div class="catalog-item-plane">
-          <img src="img/catalog/sea.png" alt="" crossorigin="" data-sampler="planeTexture">
-        </div>
-        <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды</div>
-        <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
-      </div>
-      <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
-        <div class="catalog-item-plane">
-          <img src="img/catalog/atlantide.png" alt="" crossorigin="" data-sampler="planeTexture">
-        </div>
-        <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды</div>
-        <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
-      </div>
-      <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
-        <div class="catalog-item-plane">
-          <img src="img/catalog/flowers.png" alt="" crossorigin="" data-sampler="planeTexture">
-        </div>
-        <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды</div>
-        <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
-      </div>
-      <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
-        <div class="catalog-item-plane">
-          <img src="img/catalog/sea.png" alt="" crossorigin="" data-sampler="planeTexture">
-        </div>
-        <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды</div>
-        <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
+      <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды 1</div>
+      <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
+      <div class="catalog-item-hover ">
+        <img src="img/catalog/atlantide-hover.png" alt="">
+        <div class="catalog-item-hover-gradient"></div>
+        <button class="catalog-item-hover-btn btn btn-white btn-contur relative">Подробнее</button>
       </div>
     </div>
-  </section>
-
-
-  <section class="about relative ">
-    <div class="about-bg">
-      <div class="about-bg-grid max-lg:hidden">
-        <div class="about-bg-item">
-          <img src="img/about-bg/1.png" alt="" class="w-full">
-        </div>
-        <div class="about-bg-item">
-          <img src="img/about-bg/1.png" alt="">
-        </div>
-        <div class="about-bg-item w-2/3 mt-[-33%]">
-          <img src="img/about-bg/2.png" alt="" class="w-full">
-        </div>
-        <div class="about-bg-item">
-          <img src="img/about-bg/3.png" alt="" class="w-full">
-        </div>
-        <div class="about-bg-item">
-          <img src="img/about-bg/4.png" alt="" class="w-full">
-        </div>
-        <div class="about-bg-item">
-          <img src="img/about-bg/1.png" alt="" class="w-full">
-        </div>
-        <div class="about-bg-item w-2/3 ml-auto mb-[-33%]">
-          <img src="img/about-bg/5.png" alt="" class="w-full">
-        </div>
-        <div class="about-bg-item">
-          <img src="img/about-bg/6.png" alt="" class="w-full">
-        </div>
-        <div class="about-bg-item">
-          <img src="img/about-bg/1.png" alt="" class="w-full">
-        </div>
+    <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
+      <div class="catalog-item-plane">
+        <img src="img/catalog/sea.png" alt="" crossorigin="" data-sampler="planeTexture">
       </div>
-      <img src="img/about-mobile.jpg" alt="" class="lg:hidden absolute left-0 top-0 w-full h-full object-cover">
+      <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды 2</div>
+      <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
     </div>
-    <div class="about-content relative">
-      <img src="img/about-flag.svg" alt="" class="mx-auto mb-6 sm:mb-11">
-      <div class="title leading-none text-center">
-        Для вашего <br>
-        интерьера
+    <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
+      <div class="catalog-item-plane">
+        <img src="img/catalog/flowers.png" alt="" crossorigin="" data-sampler="planeTexture">
       </div>
-      <div class="mt-6 sm:mt-9 text-center leading-normal max-sm:text-sm">
-        С помощью разных инструментов <br>
-        и материалов на поверхности планшета <br>
-        или холста создаётся рельеф, фактура
-      </div>
-      <button class="btn btn-whitebg btn-black  mt-8 sm:mt-14 mx-auto">Смотреть всё</button>
+      <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды 3</div>
+      <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
     </div>
-  </section>
+    <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
+      <div class="catalog-item-plane">
+        <img src="img/catalog/flowers.png" alt="" crossorigin="" data-sampler="planeTexture">
+      </div>
+      <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды 4</div>
+      <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
+    </div>
+    <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
+      <div class="catalog-item-plane">
+        <img src="img/catalog/atlantide.png" alt="" crossorigin="" data-sampler="planeTexture">
+      </div>
+      <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды 5</div>
+      <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
+    </div>
+    <div class="catalog-item mb-4 md:mb-5 lg:mb-16">
+      <div class="catalog-item-plane">
+        <img src="img/catalog/sea.png" alt="" crossorigin="" data-sampler="planeTexture">
+      </div>
+      <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды 6</div>
+      <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
+    </div>
 
-  <section class="slider">
-    <div class="slider-item">
-      <div class="slider-content-swiper swiper">
-        <div class="swiper-wrapper">
-          <% for(let i = 0; i < 3; i++) { %>
-          <div class="slider-content swiper-slide">
-            <div class="title text-center">Добавьте морскую свежесть</div>
-            <div class="mt-6 xl:mt-11 leading-normal opacity-60 text-center max-xl:text-sm">
-              Во время работы над картиной Репин серьезно поссорился <br class="max-xl:hidden">
-              с моделью. Как известно, художника может обидеть <br class="max-xl:hidden">
-              каждый, но немногие могут отомстить так изобретательно, <br class="max-xl:hidden">
-              как это сделал Репин. Обиженный художник «переодел» <br class="max-xl:hidden">
-              Софью на портрете в монашеские одежды.
-            </div>
-            <button class="mt-6 xl:mt-16 mx-auto btn btn-black btn-whitebg">Купить картину</button>
+  </div>
+  <button class="btn btn-contur btn-black mx-auto mt-10" data-fancybox-modal data-src="dialog-success.html">More</button>
+</section>
+
+
+<section class="about relative ">
+  <div class="about-bg">
+    <div class="about-bg-grid max-lg:hidden">
+      <div class="about-bg-item">
+        <img src="img/about-bg/1.png" alt="" class="w-full">
+      </div>
+      <div class="about-bg-item">
+        <img src="img/about-bg/1.png" alt="">
+      </div>
+      <div class="about-bg-item w-2/3 mt-[-33%]">
+        <img src="img/about-bg/2.png" alt="" class="w-full">
+      </div>
+      <div class="about-bg-item">
+        <img src="img/about-bg/3.png" alt="" class="w-full">
+      </div>
+      <div class="about-bg-item">
+        <img src="img/about-bg/4.png" alt="" class="w-full">
+      </div>
+      <div class="about-bg-item">
+        <img src="img/about-bg/1.png" alt="" class="w-full">
+      </div>
+      <div class="about-bg-item w-2/3 ml-auto mb-[-33%]">
+        <img src="img/about-bg/5.png" alt="" class="w-full">
+      </div>
+      <div class="about-bg-item">
+        <img src="img/about-bg/6.png" alt="" class="w-full">
+      </div>
+      <div class="about-bg-item">
+        <img src="img/about-bg/1.png" alt="" class="w-full">
+      </div>
+    </div>
+    <img src="img/about-mobile.jpg" alt="" class="lg:hidden absolute left-0 top-0 w-full h-full object-cover">
+  </div>
+  <div class="about-content relative">
+    <img src="img/about-flag.svg" alt="" class="mx-auto mb-6 sm:mb-11">
+    <div class="title leading-none text-center">
+      Для вашего <br>
+      интерьера
+    </div>
+    <div class="mt-6 sm:mt-9 text-center leading-normal max-sm:text-sm">
+      С помощью разных инструментов <br>
+      и материалов на поверхности планшета <br>
+      или холста создаётся рельеф, фактура
+    </div>
+    <button class="btn btn-whitebg btn-black  mt-8 sm:mt-14 mx-auto">Смотреть всё</button>
+  </div>
+</section>
+
+<section class="slider">
+  <div class="slider-item">
+    <div class="slider-content-swiper swiper">
+      <div class="swiper-wrapper">
+        <% for(let i = 0; i < 3; i++) { %>
+        <div class="slider-content swiper-slide">
+          <div class="title text-center">Добавьте морскую свежесть</div>
+          <div class="mt-6 xl:mt-11 leading-normal opacity-60 text-center max-xl:text-sm">
+            Во время работы над картиной Репин серьезно поссорился <br class="max-xl:hidden">
+            с моделью. Как известно, художника может обидеть <br class="max-xl:hidden">
+            каждый, но немногие могут отомстить так изобретательно, <br class="max-xl:hidden">
+            как это сделал Репин. Обиженный художник «переодел» <br class="max-xl:hidden">
+            Софью на портрете в монашеские одежды.
           </div>
-          <% } %>
+          <button class="mt-6 xl:mt-16 mx-auto btn btn-black btn-whitebg">Купить картину</button>
         </div>
+        <% } %>
       </div>
-      <div class="slider-product-swiper swiper">
-        <div class="swiper-wrapper">
-          <% for(let i = 0; i < 3; i++) { %>
-          <div class="slider-product flex flex-col items-center swiper-slide">
+    </div>
+    <div class="slider-product-swiper swiper">
+      <div class="swiper-wrapper">
+        <% for(let i = 0; i < 3; i++) { %>
+        <div class="slider-product flex flex-col items-center swiper-slide">
 
-            <div class="catalog-item-plane">
-              <img src="img/catalog/atlantide.png" alt="" crossorigin="" data-sampler="planeTexture">
-            </div>
-            <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды</div>
-            <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
-
-
+          <div class="catalog-item-plane">
+            <img src="img/catalog/atlantide.png" alt="" crossorigin="" data-sampler="planeTexture">
           </div>
-          <% } %>
+          <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды</div>
+          <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
+
+
         </div>
-      </div>
-      <button class="btn btn-text slider-item-prev">
-        <svg class="icon">
-          <use xlink:href="img/icons.svg#arrow-left" />
-        </svg>
-      </button>
-      <button class="btn btn-text slider-item-next">
-        <svg class="icon">
-          <use xlink:href="img/icons.svg#arrow-right" />
-        </svg>
-      </button>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="footer-logo max-md:hidden">
-      <img src="img/logo-white.svg" alt="">
-    </div>
-    <div class="footer-soc max-md:hidden">
-      <div class="flex gap-2">
-        <a href="" target="_blank" class="btn btn-text">
-          <img src="img/telegramm.svg" alt="">
-        </a>
-        <a href="" target="_blank" class="btn btn-text">
-          <img src="img/pinterest.svg" alt="">
-        </a>
+        <% } %>
       </div>
     </div>
+    <button class="btn btn-text slider-item-prev">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#arrow-left" />
+      </svg>
+    </button>
+    <button class="btn btn-text slider-item-next">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#arrow-right" />
+      </svg>
+    </button>
+  </div>
+</section>
 
-    <div class="opacity-40">Интерьерные картины для вашего дома</div>
-    <a href="https://stdkit.ru" target="_blank" class="opacity-40 underline-offset-4 hover:underline">Разработка: Студия К.И.Т.</a>
-
-
-  </footer>
-
-  <div class="input"></div>
-</body>
-
-</html>
+<%= _.template(require('./html-includes/footer.html').default)() %>

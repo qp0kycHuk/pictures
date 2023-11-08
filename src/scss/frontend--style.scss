@@ -225,6 +225,10 @@ body {
     }
   }
 
+  &-grid>* {
+    break-inside: avoid-column;
+  }
+
   &-item {
     display       : flex;
     align-items   : center;
@@ -233,7 +237,7 @@ body {
     padding       : 58px 42px 32px;
     background    : linear-gradient(180deg, #EEE 0%, rgba(238, 238, 238, 0.50) 100%);
     text-align    : center;
-    break-inside  : avoid-column;
+
 
     @media (max-width:theme('screens.md')) {
       padding: 15px;
@@ -526,6 +530,7 @@ body {
   }
 }
 
+.dialog-policy,
 .dialog-product {
   width    : 970px;
   max-width: 100%;
@@ -642,6 +647,30 @@ body {
 
     @media (max-width:theme('screens.sm')) {
       padding: 40px 20px;
+    }
+  }
+}
+
+.dialog-message {
+  width    : 360px;
+  max-width: 100%;
+  padding  : 40px 20px;
+}
+
+.not-found {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  flex-direction : column;
+  flex-grow      : 1;
+
+  &-title {
+    font-family: var(--font-alt);
+    font-size  : 228px;
+    line-height: 0.75;
+
+    @media (max-width:theme('screens.sm')) {
+      font-size: 128px;
     }
   }
 }
