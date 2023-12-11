@@ -15,6 +15,40 @@
     <input type="tel" class="form-input w-full" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _">
   </label>
 
+  <div class="mt-4 sm:mt-8">
+    <div class="font-medium mb-2">Удобный способ связи</div>
+
+    <div class="grid grid-cols-3 gap-4">
+      <div>
+        <input type="radio" hidden name="connect" id="connect-telegramm" class="peer" checked value="Telegram">
+        <label class="btn btn-black gap-3 px-4 btn-contur border-black cursor-pointer border-opacity-20 peer-checked:btn-fill" for="connect-telegramm">
+          <svg class="icon text-2xl ">
+            <use xlink:href="img/icons.svg#telegramm" />
+          </svg>
+          <span class="max-sm:hidden">Telegram</span>
+        </label>
+      </div>
+      <div>
+        <input type="radio" hidden name="connect" id="connect-whatsapp" class="peer" value="Whatsapp">
+        <label class="btn btn-black gap-3 px-4 btn-contur border-black cursor-pointer border-opacity-20 peer-checked:btn-fill" for="connect-whatsapp">
+          <svg class="icon text-2xl ">
+            <use xlink:href="img/icons.svg#whatsapp" />
+          </svg>
+          <span class="max-sm:hidden">Whatsapp</span>
+        </label>
+      </div>
+      <div>
+        <input type="radio" hidden name="connect" id="connect-smartphone" class="peer" value="Позвонить">
+        <label class="btn btn-black gap-3 px-4 btn-contur border-black cursor-pointer border-opacity-20 peer-checked:btn-fill" for="connect-smartphone">
+          <svg class="icon text-2xl ">
+            <use xlink:href="img/icons.svg#smartphone" />
+          </svg>
+          <span class="max-sm:hidden">Позвонить</span>
+        </label>
+      </div>
+    </div>
+  </div>
+
   <div class="flex mt-8 sm:mt-9">
     <button class="btn btn-fill btn-black">Отправить</button>
   </div>

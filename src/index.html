@@ -5,10 +5,11 @@
     <div class="swiper-wrapper h-auto">
       <% for(let i = 0; i < 12; i++) { %>
       <div class="started-content swiper-slide">
-        <div class="text-center opacity-60">Картины для интерьера</div>
-        <div class="text-center title  mt-6 lg:mt-15">
-          Картины в технике <br>
-          текстурной живописи
+        <div class="text-center opacity-60 sm:text-1.5xl">Картины для интерьера</div>
+        <div class="text-center title  mt-6 lg:mt-14">
+          Дизайнерские <br>
+          интерьерные картины <br>
+          ручной работы на холсте
         </div>
         <button class="btn btn-fill btn-black mx-auto mt-8 lg:mt-20">Смотреть всё</button>
       </div>
@@ -68,11 +69,16 @@
 
   <div class="columns-2 lg:columns-3 gap-4 md:gap-5 lg:gap-16 catalog-grid">
     <div class="catalog-item mb-4 md:mb-5 lg:mb-16 cursor-pointer" data-fancybox-modal data-src="dialog-product.html">
+      <div class="catalog-item-status">
+        <img src="img/status.svg" alt="">
+        в наличии
+      </div>
       <div class="catalog-item-plane">
         <img src="img/catalog/atlantide.png" alt="" crossorigin="" data-sampler="planeTexture">
       </div>
-      <div class="mt-5 opacity-40 max-sm:text-sm">Цветы Атлантиды 1</div>
-      <div class="font-alt mt-2 text-xl sm:text-2xl">4000 руб</div>
+      <div class="mt-5 max-sm:text-sm">Золотое поле</div>
+      <div class="opacity-40 text-xs sm:text-sm">Акрил, текстурная паста</div>
+      <div class="font-alt mt-3 text-xl sm:text-2xl">4000 руб</div>
       <div class="catalog-item-hover ">
         <img src="img/catalog/atlantide-hover.png" alt="">
         <div class="catalog-item-hover-gradient"></div>
@@ -116,7 +122,7 @@
     </div>
 
   </div>
-  <button class="btn btn-contur btn-black mx-auto mt-10" data-fancybox-modal data-src="dialog-success.html">More</button>
+  <button class="btn btn-contur btn-black mx-auto mt-10" data-fancybox-modal data-src="dialog-form.html">More</button>
 </section>
 
 

@@ -243,6 +243,33 @@ body {
       padding: 15px;
     }
 
+    &-status {
+      display      : flex;
+      align-items  : center;
+      position     : absolute;
+      top          : 0;
+      left         : 0;
+      height       : 38px;
+      padding      : 10px;
+      padding-right: 16px;
+      background   : #C1DEC9;
+      font-family  : var(--font-alt);
+      color        : #1F7439;
+      gap          : 5px;
+
+      &::before {
+        content      : '';
+        position     : absolute;
+        top          : 0;
+        right        : -12px;
+        width        : 18px;
+        height       : 100%;
+        border-top   : 19px solid #C1DEC9;
+        border-right : 10px solid rgba(0, 0, 0, 0);
+        border-bottom: 19px solid #C1DEC9;
+      }
+    }
+
     &-plane {
       filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, .25));
 
