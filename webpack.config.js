@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const path = require('path')
 const fs = require('fs')
 const webpack = require('webpack')
@@ -82,15 +81,6 @@ module.exports = {
     ...generateHtmlPlugins('./src'),
     new CopyPlugin({
       patterns: [{ from: './src/img/', to: './img/' }, ...generateCopyPlugins('./src/html-dialogs')],
-    }),
-    new FaviconsWebpackPlugin({
-      logo: './src/favicon.png',
-      devMode: 'webapp',
-      prefix: 'favicon/',
-      favicons: {
-        background: '#ffffff',
-        theme_color: '#c0392b',
-      },
     }),
   ],
   devServer: {
